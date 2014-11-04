@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+
+
+
+	</script>
+	
+</head>
+<body>
+<div>
+	<p style="display:inline-block; margin:0;">обновлять стор:</p><input type="checkbox" id="refreshGame" onchange="gcSetRefreshGameTimer()"/>
+</div>
+<div>
+	<p style="display:inline-block; margin:0;">авто завдання:</p><input type="checkbox" id="autoTask" onchange="delAutoTasks();tmReset();tmStartWork();"/>
+	<p style="display:inline-block; margin:0; margin-left:5px">напрямок:</p>
+	<select id="direct" style="width:108px" onchange="delAutoTasks();tmReset();">
+		<option value="experience">Опит</option>
+		<option value="money">Гроші</option>
+	</select>
+</div>
+<div>
+	<p style="display:inline-block; margin:0;">місто:</p><input style="width:90px;margin-left:5px" id="town" value="Пирятин"></input>
+	<p style="display:inline-block; margin:0; margin-left:4px">кімната:</p>
+	<select style="width:110px" id="room">
+		<option value="cubby">Чулан</option>
+		<option value="bedroom">Номер</option>
+		<option value="hotel_room">Сьют</option>
+		<option value="apartment">Люкс</option>
+		<option value="luxurious_apartment" selected>Апартаменты</option>
+	</select>
+</div>
+<div>
+	<table id="tasksList" style="width:300px;border-collapse: collapse;table-layout:fixed;">
+		<tr style="background: rgb(165, 165, 165);">
+			<td style="width:150px;text-align: center;font-weight: bold;">робота</td>
+			<td style="width:78px; padding-left:5px;text-align: center;font-weight: bold; border-left:solid 1px;border-right:solid 1px;">мотивація</td>
+			<td style="padding-left:5px;"></td>
+		</tr>
+		<tr id="elementsForAdding">
+			<td style=""><select style="width:100%" id="job"></select></td>
+			<td style="padding-left:5px"><input style="width:100%" id="motivation" value="50"></input></td>
+			<td style="padding-left:5px;text-align:center;"><button onclick="addTaskButton(); tmStartWork();">ок</button></td>
+		</tr>
+	</table>
+</div>
+
+</body>
+</html>
